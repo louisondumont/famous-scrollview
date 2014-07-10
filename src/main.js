@@ -17,7 +17,9 @@ define('main', function(require, exports, module) {
     // Scrollview and surfaces
     var scrollview = new ScrollView({
       direction: 0,
-      paginated: true
+      paginated: true,
+      clipSize: 400,
+      margin: 100
     });
     var surfaces = [];
     scrollview.sequenceFrom(surfaces);
@@ -36,7 +38,7 @@ define('main', function(require, exports, module) {
       for (var i = 0, temp; i < 50; i++) {
         temp = new Surface({
           content: 'Surface: ' + surfaces.length,
-          size: [180, 100],
+          size: [100, 100],
           properties: {
             backgroundColor: 'hsl(' + (i * 360 / 10) + ', 100%, 50%)',
             lineHeight: '100px',
